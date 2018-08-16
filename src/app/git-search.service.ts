@@ -16,6 +16,7 @@ export class GitSearchService {
   this.username="wanguinjoka" }
 
   getProfileInfo(){
-    return this.http.get("https://api.github.com/users/")
+    return this.http.get("https://api.github.com/users/"+ this.username +"&client_secret=" +this.clientsecret)
+    .map(res => res.json());
   }
 }
