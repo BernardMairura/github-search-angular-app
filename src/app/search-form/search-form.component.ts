@@ -1,6 +1,6 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
+import { Username } from '../username';
 
-import { Profile } from '../profile-class/profile'
 
 
 @Component({
@@ -9,15 +9,13 @@ import { Profile } from '../profile-class/profile'
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  username:string;
-  username= new Username;
 
- findProfile(){
- this.username.emit(this.username);
+  newUsername = new Username("");
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(){
   }
 
+}
 }

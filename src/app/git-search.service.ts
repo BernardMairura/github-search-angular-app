@@ -2,22 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment'
 import { Profile } from './profile-class/profile';
+import { SearchFormComponent } from './search-form/search-form'
 
 @Injectable({
   providedIn: 'root'
 })
 export class GitSearchService {
 
-   private username='string';
-
-profile:Profile;
+   username:Username;
+   profile:Profile;
 
   constructor(private http:HttpClient) {
     this.profile = new Profile("","","","");
-    // this.username ='wanguinjoka';
+    this.username =new Username("");
     }
-    updateProfile(username:string){
-        this.username = username
+    // updateProfile(username:string){
+    //     this.username = username
       }
       profileRequest() {
 
@@ -55,4 +55,5 @@ profile:Profile;
        //        this.username=username;
 
      }
+}
 }
