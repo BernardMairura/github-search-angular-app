@@ -1,5 +1,9 @@
 <div class="container">
-  <app-search-form></app-search-form>
+  <form action="">
+       <div class="form-group">
+         <input type="text" class="form-control" placeholder="search  git users with username"[(ngModel)]="username" name="username"(keyup)="findProfile()">
+       </div>
+     </form>
     <div class="row">
 
             <p>{{profile.name}}</p>
