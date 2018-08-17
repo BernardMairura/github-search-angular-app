@@ -8,12 +8,17 @@ import { Profile } from './profile-class/profile';
 })
 export class GitSearchService {
 
-   // private username='string';
-   // private clientsecret='227b075f172f9ba7715226bf57012060566ebdfa';
+   private username='string';
+
 profile:Profile;
 
   constructor(private http:HttpClient) {
     this.profile = new Profile("","","","");
+    this.username ='wanguinjoka'
+ }
+ updateProfile(username:string){
+   this.username=username;
+ }
  }
  profileRequest(){
   interface ApiResponse{
@@ -27,7 +32,7 @@ profile:Profile;
   }
 
  let promise = new Promise((resolve,reject)=>{
-   this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+   this.http.get<ApiResponse>(environment.apiUrl+this.username+environment.apiKey).toPromise().then(response=>{
      this.profile.name=response.name
      this.profile.url=response.url
      this.profile.bio=response.bio
@@ -46,4 +51,5 @@ profile:Profile;
   })
   return promise
   }
+
 }

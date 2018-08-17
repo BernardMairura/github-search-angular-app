@@ -10,10 +10,13 @@ import { Profile } from '../profile-class/profile'
 })
 export class ProfileComponent implements OnInit {
   profile:Profile;
+  username:string;
 
   constructor(private GitSearchService:GitSearchService) {
      }
-
+  findProfile(){
+     this.GitSearchService.updateProfile(this.username);
+   }
   ngOnInit() {
     this.GitSearchService.profileRequest()
     this.profile=this.GitSearchService.profile

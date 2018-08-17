@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://api.github.com/users/wanguinjoka"
+  apiUrl:"https://api.github.com/users/",
+  apiKey:"?access_token=227b075f172f9ba7715226bf57012060566ebdfa"
 };
 
 /*
