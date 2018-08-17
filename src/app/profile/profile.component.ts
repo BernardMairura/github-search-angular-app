@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GitSearchService } from '../git-search.service'
-import { Profile } from '../profile-class/profile'
+import { GitSearchService } from '../git-search.service';
+import { Profile } from '../profile-class/profile';
+
 
 @Component({
   selector: 'app-profile',
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
   //    this.GitSearchService.updateProfile(this.username);
   //  }
   ngOnInit() {
+    this.GitSearchService.updateProfile(this.username)
     this.GitSearchService.profileRequest()
     this.profile=this.GitSearchService.profile
   }
