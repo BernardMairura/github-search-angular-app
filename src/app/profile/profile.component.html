@@ -1,6 +1,6 @@
 <div class="container">
   <ng-progress></ng-progress>
-  <app-search-form></app-search-form>
+  <app-search-form (username)="newusername($event)"></app-search-form>
     <div class="row">
 
             <p>{{profile.name}}</p>

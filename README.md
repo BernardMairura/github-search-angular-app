@@ -1,27 +1,31 @@
-# GithubSearchApp
+# Github-Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+#### Github-Search is a website app designed in Angular. It assists uses to search through github Users and there repositories.It was developed on 17th August 2018
+#### By Contributors
+* https://github.com/wanguinjoka
 
-## Development server
+## Description
+The program is divided into the user interface and business logic. With the following specifications:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+|User Behaviour                    | Input                    | Output         |
+|:--------------------------------:|:------------------------:|:--------------:|
+|search by profile                 |  Click search profile    | opens profile Page|
+|writes usersname                  |inputs username in form   | details of the user appears |
+|selects on the repos              | click view repo          | Opens lists of repos |
+|switch pages                      | clicks on page buttons   | Navigate through pages|
+## Setup/Installation Requirements
+For Installation and setup requirements one could fork or clone the Github repository on my github profile
+* The live link is:https://wanguinjoka.github.io/github-search-angular-app
+## Known Bugs
+There no Known Bugs
+## Technologies used
+The program uses the following technologies
+For the user-interface and Business-logic:
+* HTML
+* Bootstrap Styles
+* Angular 6
+## Support and contact details
+I encourage you to contact me for any queries through our github links above.
+### License
+M
+Copyright (c) {2018}

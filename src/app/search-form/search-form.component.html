@@ -1,6 +1,12 @@
 
-<form action="">
+<form (ngSubmit)='findProfile()' #searchForm='ngForm'>
      <div class="form-group">
-       <input type="text" class="form-control" placeholder="search  git users with username"[(ngModel)]="username" name="username"(keyup)="findProfile()">
+       <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)] ="username" name="username" #username=ngModel>
+      <button type="Submit" class="btn btn-success btn-lg">search</button>
+
      </div>
    </form>
+
+[(ngModel)]
+name = "hsdckh"
+#bcsc= ngModel

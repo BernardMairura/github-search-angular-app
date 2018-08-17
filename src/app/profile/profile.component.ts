@@ -19,9 +19,13 @@ export class ProfileComponent implements OnInit {
   //    this.GitSearchService.updateProfile(this.username);
   //  }
   ngOnInit() {
-    this.GitSearchService.updateProfile(this.username)
+    // /
+
+    // this.GitSearchService.updateProfile(this.username)
+
     this.GitSearchService.profileRequest()
     this.profile=this.GitSearchService.profile
+
   }
 
 }

@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { GitSearchService } from '../git-search.service'
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+
 import { Profile } from '../profile-class/profile'
 
 
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
-  providers:[GitSearchService],
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
   username:string;
+  username= new Username;
 
-  constructor(private GitSearchService:GitSearchService) { }
+ findProfile(){
+ this.username.emit(this.username);
 
-  findProfile(){
-  this.GitSearchService.updateProfile(this.username);
-}
+  constructor() { }
+
   ngOnInit(){
   }
 

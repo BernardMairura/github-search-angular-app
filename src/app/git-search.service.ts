@@ -16,7 +16,7 @@ profile:Profile;
     this.profile = new Profile("","","","");
     // this.username ='wanguinjoka';
     }
-      updateProfile(username:string){
+    updateProfile(username:string){
         this.username = username
       }
       profileRequest() {
