@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment'
 import { Profile } from './profile-class/profile';
-import { SearchFormComponent } from './search-form/search-form';
+// import { SearchFormComponent } from './search-form/search-form';
 // import { Username } from './username'
 
 @Injectable({

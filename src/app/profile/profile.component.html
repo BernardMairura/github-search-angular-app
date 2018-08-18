@@ -3,16 +3,16 @@
   <app-search-form (username)="newusername($event)"></app-search-form>
     <div class="row">
       <div class ="col-sm-4">
-            <img src="{{profile.avatar}}" class="img-circle" alt="image">
+            <img src="{{profile.avatar}}" class="img-circle|" alt="image">
         </div>
-        <div class ="col-sm-4">
+        <div class ="col-sm-2">
             <p>{{profile.name}}</p>
-            <p><a href="{{profile.url}}">{{profile.url}}</p>
+            <p><a href="{{profile.url}}">{{profile.url}}</a></p>
             <p>{{profile.bio}}</p>
             <p>{{profile.location}}</p>
-            <p>{{profile.public_repos}}</p>
-            <p>{{profile.followers}}</p>
-            <p>{{profile.following}}</p>
+            <p>{{profile.public_repos}} Repos</p>
+            <p>{{profile.followers}} Followers</p>
+            <p>{{profile.following}} Following</p>
 
    </div>
 
