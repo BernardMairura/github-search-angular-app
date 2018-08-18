@@ -10,12 +10,11 @@ import { Username } from '../username';
 })
 export class SearchFormComponent implements OnInit {
 
-  newUsername = new Username("");
+
 
   constructor() {}
 
   ngOnInit(){
   }
 
-}
 }
