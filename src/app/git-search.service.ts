@@ -3,8 +3,6 @@ import { HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment'
 import { Profile } from './profile-class/profile';
 import { Repos } from './repos';
-// import { SearchFormComponent } from './search-form/search-form';
-// import { Username } from './username'
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +10,15 @@ import { Repos } from './repos';
 export class GitSearchService {
 
    private username:string;
-   // private apiRepos:string;
    profile:Profile;
    repos:Repos;
 
   constructor(private http:HttpClient) {
     this.profile = new Profile("","","","","",0,0,0);
     this.repos = new Repos("","","");
-    // this.apiRepos= '/repos';
-    this.username = 'wanguinjoka';
-  }
-    // updateProfile(username:string){
-    //     this.username = username
-
-          profileRequest(){
-
+    this.username = '';
+    }
+    profileRequest(){
                interface ApiResponse{
                  avatar_url:string;
                   name:string;
@@ -52,17 +44,15 @@ export class GitSearchService {
                 resolve()
                  },
                  error =>{
-                   this.profile.name = "Unable to get user"
+                   this.profile.name = "-Error - Unable to get user"
                    reject(error)
                  }
                )
              })
                  return promise
                }
-               // updateProfile(username:string){
-               //        this.username=username;
 
-          repoRequest(){
+      repoRequest(){
             interface ApiResponse{
                  name:string;
                   description:string;
@@ -79,20 +69,16 @@ export class GitSearchService {
                 resolve()
                  },
                  error =>{
-                   this.repos.name = "Unable to get Repos"
+                   this.repos.name = "Error - Unable to get Repos"
                    reject(error)
                  }
                )
              })
                  return promise
-               // }
-               // updateProfile(username:string){
-               //        this.username=username;
-
 
              }
              updateProfile(username:string){
                this.username =username;
              }
 
-             }
+        }

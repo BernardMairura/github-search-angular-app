@@ -3,11 +3,6 @@
   <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
        <div class="form-group">
          <input type="text" class="form-control" placeholder="search  git repos with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
-         <!-- <div>
-         display{{newUsername.username}}
-       </div>
-        <button type="Submit" class="btn btn-success btn-lg">search</button> -->
-
        </div>
      </form>
 <h2>Repository</h2>
@@ -16,4 +11,7 @@
       <p>2{{repos.description}}</p>
 
 <!-- </div> -->
+</div>
+<div>
+ <button class="home"><a routerLink='/home' routerLinkActive='active'>GO Back Home</a></button>
 </div>
