@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment'
 import { Profile } from './profile-class/profile';
+import { Repos } from './repos';
 // import { SearchFormComponent } from './search-form/search-form';
 // import { Username } from './username'
 
@@ -11,10 +12,14 @@ import { Profile } from './profile-class/profile';
 export class GitSearchService {
 
    private username:string;
+   // private apiRepos:string;
    profile:Profile;
+   repos:Repos;
 
   constructor(private http:HttpClient) {
     this.profile = new Profile("","","","","",0,0,0);
+    this.repos = new Repos("","","");
+    // this.apiRepos= '/repos';
     this.username = 'wanguinjoka';
   }
     // updateProfile(username:string){
@@ -23,9 +28,9 @@ export class GitSearchService {
           profileRequest(){
 
                interface ApiResponse{
-                 avatar:styleUrls;
+                 avatar_url:string;
                   name:string;
-                  url:styleUrls;
+                  url:string;
                   bio:string;
                   location:string;
                   public_repos:number;
@@ -35,7 +40,7 @@ export class GitSearchService {
 
               let promise = new Promise((resolve,reject)=>{
                 this.http.get<ApiResponse>(environment.apiUrl+this.username+environment.apiKey).toPromise().then(response=>{
-                  this.profile.avatar=response.avatar_url
+                  this.profile.avatar_url=response.avatar_url
                   this.profile.name=response.name
                   this.profile.url=response.url
                   this.profile.bio=response.bio
@@ -56,9 +61,36 @@ export class GitSearchService {
                // }
                // updateProfile(username:string){
                //        this.username=username;
+             }
+          repoRequest(){
+            interface ApiResponseRepo{
+                 name:string;
+                  description:string;
+                  html_url:string;
+
+                 }
+
+              let promise = new Promise((resolve,reject)=>{
+                this.http.get<ApiResponseRepo>(environment.apiUrl+ this.username + environment.apiRepos + environment.apiKey).toPromise().then(response=>{
+                  this.repos.name=response.name
+                  this.repos.description=response.description
+                  this.repos.html_url=response.html_url
+
+                resolve()
+                 },
+                 error =>{
+                   this.repos.name = "Unable to get Repos"
+                   reject(error)
+                 }
+               )
+             })
+                 return promise
+               // }
+               // updateProfile(username:string){
+               //        this.username=username;
 
 
              }
 
 
-}
+             }

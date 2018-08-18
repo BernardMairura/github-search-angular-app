@@ -1,3 +1,13 @@
-<p>
-  repo works!
-</p>
+<div class="container">
+  <ng-progress></ng-progress>
+
+    <div class="row" *ngFor="let repos of Reposs" >
+
+
+            <p>{{repos.name}}</p>
+            <p>{{repos.description}}</p>
+            <p><a href="{{repos.html_url}}">{{repos.html_url}}</a></p>
+
+
+</div>
+</div>
