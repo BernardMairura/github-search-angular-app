@@ -91,6 +91,8 @@ export class GitSearchService {
 
 
              }
-
+             updateProfile(username:string){
+               this.username =username;
+             }
 
              }

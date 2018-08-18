@@ -1,13 +1,19 @@
 <div class="container">
   <ng-progress></ng-progress>
+  <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
+       <div class="form-group">
+         <input type="text" class="form-control" placeholder="search  git repos with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
+         <!-- <div>
+         display{{newUsername.username}}
+       </div>
+        <button type="Submit" class="btn btn-success btn-lg">search</button> -->
+
+       </div>
+     </form>
 <h2>Repository</h2>
-    <div class="row" *ngFor="let repos of Reposs" >
+    <!-- <div class="row" *ngFor="let repos of Reposs" > -->
+      <p>1{{repos.name}}<a href="{{repos.html_url}}" class="btn btn-sm btn-success pull-right">View this Repo</a></p>
+      <p>2{{repos.description}}</p>
 
-
-            <p>1{{repos.name}}<a href="{{repos.html_url}}" class="btn btn-sm btn-success pull-right">View this Repo</a></p>
-            <p>2{{repos.description}}</p>
-
-
-
-</div>
+<!-- </div> -->
 </div>

@@ -1,6 +1,16 @@
 <div class="container">
   <ng-progress></ng-progress>
-  <app-search-form (username)="newusername($event)"></app-search-form>
+
+  <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
+       <div class="form-group">
+         <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
+         <!-- <div>
+         display{{newUsername.username}}
+       </div>
+        <button type="Submit" class="btn btn-success btn-lg">search</button> -->
+
+       </div>
+     </form> 
     <div class="row">
       <div class ="col-sm-4">
             <img src="{{profile.avatar_url}}" class="img-circle|" alt="image">

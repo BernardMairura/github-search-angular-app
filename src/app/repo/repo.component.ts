@@ -10,10 +10,13 @@ import { Repos } from '../repos';
   styleUrls: ['./repo.component.css']
 })
 export class RepoComponent implements OnInit {
-
+    username:string;
     repos:Repos;
 
   constructor(private GitSearchService:GitSearchService) {
+        }
+    findProfile(){
+    this.GitSearchService.updateProfile(this.username);
     this.GitSearchService.repoRequest();
     this.repos=this.GitSearchService.repos
   }
