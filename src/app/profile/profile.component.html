@@ -4,16 +4,11 @@
   <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
        <div class="form-group">
          <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
-         <!-- <div>
-         display{{newUsername.username}}
-       </div>
-        <button type="Submit" class="btn btn-success btn-lg">search</button> -->
-
-       </div>
-     </form> 
+      </div>
+     </form>
     <div class="row">
       <div class ="col-sm-4">
-            <img src="{{profile.avatar_url}}" class="img-circle|" alt="image">
+            <img src="{{profile.avatar_url}}" class="avatar" alt="image">
         </div>
         <div class ="col-sm-3">
           <ul>
@@ -27,6 +22,8 @@
             <p>{{profile.following}} Following</p>
 
    </div>
-
+   <div>
+    <button class="home"><a routerLink='/home' routerLinkActive='active'>GO Back Home</a></button>
+  </div>
 </div>
 </div>
