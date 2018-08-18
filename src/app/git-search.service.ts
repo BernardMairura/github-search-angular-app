@@ -58,12 +58,12 @@ export class GitSearchService {
                )
              })
                  return promise
-               // }
+               }
                // updateProfile(username:string){
                //        this.username=username;
-             }
+
           repoRequest(){
-            interface ApiResponseRepo{
+            interface ApiResponse{
                  name:string;
                   description:string;
                   html_url:string;
@@ -71,7 +71,7 @@ export class GitSearchService {
                  }
 
               let promise = new Promise((resolve,reject)=>{
-                this.http.get<ApiResponseRepo>(environment.apiUrl+ this.username + environment.apiRepos + environment.apiKey).toPromise().then(response=>{
+                this.http.get<ApiResponse>(environment.apiUrl+ this.username + environment.apiRepos).toPromise().then(response=>{
                   this.repos.name=response.name
                   this.repos.description=response.description
                   this.repos.html_url=response.html_url

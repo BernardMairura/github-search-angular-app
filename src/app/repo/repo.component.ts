@@ -14,8 +14,8 @@ export class RepoComponent implements OnInit {
     repos:Repos;
 
   constructor(private GitSearchService:GitSearchService) {
-    this.GitSearchService.repoRequest()
-    this.repos = this.GitSearchService.repos
+    this.GitSearchService.repoRequest();
+    this.repos=this.GitSearchService.repos
   }
 
   ngOnInit() {

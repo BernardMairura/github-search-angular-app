@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   constructor(private GitSearchService:GitSearchService) {
     this.GitSearchService.profileRequest()
     this.profile=this.GitSearchService.profile
+
      }
   // findProfile(){
   //    this.GitSearchService.updateProfile(this.username);

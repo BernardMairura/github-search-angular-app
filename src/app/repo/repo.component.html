@@ -1,12 +1,12 @@
 <div class="container">
   <ng-progress></ng-progress>
-
+<h2>Repository</h2>
     <div class="row" *ngFor="let repos of Reposs" >
 
 
-            <p>{{repos.name}}</p>
-            <p>{{repos.description}}</p>
-            <p><a href="{{repos.html_url}}">{{repos.html_url}}</a></p>
+            <p>1{{repos.name}}<a href="{{repos.html_url}}" class="btn btn-sm btn-success pull-right">View this Repo</a></p>
+            <p>2{{repos.description}}</p>
+
 
 
 </div>
