@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GitSearchService } from '../git-search.service';
-import { Repos } from '../repos';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-repo',
@@ -11,14 +11,14 @@ import { Repos } from '../repos';
 })
 export class RepoComponent implements OnInit {
     username:string;
-    repos:Repos;
+    repo:Repo;
 
   constructor(private GitSearchService:GitSearchService) {
         }
     findProfile(){
     this.GitSearchService.updateProfile(this.username);
     this.GitSearchService.repoRequest();
-    this.repos=this.GitSearchService.repos
+    this.repo=this.GitSearchService.repo
   }
 
   ngOnInit() {

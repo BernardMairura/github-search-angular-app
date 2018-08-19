@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RepoComponent } from './repo/repo.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { JoinDateCountPipe } from './join-date-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     ProfileComponent,
     HomeComponent,
     PageNotFoundComponent,
-    RepoComponent
+    RepoComponent,
+    JoinDateCountPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

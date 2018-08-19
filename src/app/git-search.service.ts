@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment'
 import { Profile } from './profile-class/profile';
-import { Repos } from './repos';
+import { Repo } from './repo';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,11 @@ export class GitSearchService {
 
    private username:string;
    profile:Profile;
-   repos:Repos;
+   repo:Repo;
 
   constructor(private http:HttpClient) {
-    this.profile = new Profile("","","","","",0,0,0);
-    this.repos = new Repos("","","");
+    this.profile = new Profile("","","","","",0,0,0,new Date());
+    this.repo = new Repo("","","");
     this.username = '';
     }
     profileRequest(){
@@ -27,7 +27,8 @@ export class GitSearchService {
                   location:string;
                   public_repos:number;
                   followers:number;
-                  following:number
+                  following:number;
+                  created_at:Date
                }
 
               let promise = new Promise((resolve,reject)=>{
@@ -40,6 +41,7 @@ export class GitSearchService {
                   this.profile.public_repos=response.public_repos
                   this.profile.followers=response.followers
                   this.profile.following=response.following
+                  this.profile.created_at=response.created_at
 
                 resolve()
                  },
@@ -62,14 +64,14 @@ export class GitSearchService {
 
               let promise = new Promise((resolve,reject)=>{
                 this.http.get<ApiResponse>(environment.apiUrl+ this.username + environment.apiRepos).toPromise().then(response=>{
-                  this.repos.name=response.name
-                  this.repos.description=response.description
-                  this.repos.html_url=response.html_url
+                  this.repo.name=response.name
+                  this.repo.description=response.description
+                  this.repo.html_url=response.html_url
 
                 resolve()
                  },
                  error =>{
-                   this.repos.name = "Error - Unable to get Repos"
+                   this.repo.name = "Error - Unable to get Repo"
                    reject(error)
                  }
                )

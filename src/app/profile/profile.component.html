@@ -1,30 +1,43 @@
 <div class="container">
+  <ul class="bar">
+    <li>Git-hub Search</li>
+  </ul>
   <ng-progress></ng-progress>
 
+<div class="form">
   <form (ngSubmit)='findProfile()' #searchForm='ngForm'>
        <div class="form-group">
          <input type="text" class="form-control" placeholder="search  git users with username" [(ngModel)] ="username" name="username" (keyup)="findProfile()">
       </div>
      </form>
-    <div class="row">
-      <div class ="col-sm-4">
-            <img src="{{profile.avatar_url}}" class="avatar" alt="image">
-        </div>
-        <div class ="col-sm-3">
-          <ul>
-            <li>{{profile.name}}</li>
-            <li><a href="{{profile.url}}">{{profile.url}}</a></li>
-            <li>{{profile.bio}}</li>
-            <li>{{profile.location}}</li>
-          </ul>
-            <p>{{profile.public_repos}} Repos</p>
-            <p>{{profile.followers}} Followers</p>
-            <p>{{profile.following}} Following</p>
+</div>
+<h2 appHighlight>Profile Details</h2>
 
-   </div>
- </div>
-   <div>
-    <button class="home"><a routerLink='/home' routerLinkActive='active'>GO Back Home</a></button>
+    <div class="row">
+      <div class = "avatar">
+            <img src="{{profile.avatar_url}}" class="avatarimg" alt="image">
+        </div>
+      </div>
+      <div class="row2">
+         <div class="col-sm-6">
+
+            <div class="panel">Profile Name:{{profile.name}}</div>
+            <div class="panel"><a href="{{profile.url}}">Profile Url:{{profile.url}}</a></div>
+            <div class="panel">Profile Bio:{{profile.bio}}</div>
+            <div class="panel">Location:{{profile.location}}</div>
+        </div>
+        <div class="col-sm-6">
+            <label for="Repos"> Repos:{{profile.public_repos}}</label><br>
+            <label for="followers">Followers:{{profile.followers}}</label><br>
+            <label for="following">Following:{{profile.following}}</label>
+            <div class="label label-default">This account was created on {{profile.created_at}}</div>
+            <div class="label label-default">{{profile.createdDate|joinDateCount}} days ago</div>
+
+         </div>
+       </div>
+
+   <div class="row3">
+    <button class="home"><a routerLink='/home' routerLinkActive='active'>Go Back Home</a></button>
   </div>
 
 </div>

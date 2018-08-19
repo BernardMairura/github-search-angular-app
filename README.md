@@ -1,21 +1,21 @@
 # Github-Search
 
-#### Github-Search is a website app designed in Angular. It assists uses to search through github Users and there repositories.It was developed on 17th August 2018
+#### Github-Search is a website app designed in Angular. It assists uses to search through git-hub Users and there repositories.It was developed on 17th August 2018
 #### By Contributors
-* https://github.com/wanguinjoka
+* https://github.com/wanguinjoka - Wangui Njoka
 
 ## Description
-The program is divided into the user interface and business logic. With the following specifications:
+The program has the following user behavior specifications:
 
 |User Behaviour                    | Input                    | Output         |
 |:--------------------------------:|:------------------------:|:--------------:|
-|search by profile                 |  Click search profile    | opens profile Page|
-|writes usersname                  |inputs username in form   | details of the user appears |
-|selects on the repos              | click view repo          | Opens lists of repos |
-|switch pages                      | clicks on page buttons   | Navigate through pages|
+|User chooses whether to search for User-Profile or Repos|  Click search profile Button   | Opens profile Page|
+|writes user-profile name on search |inputs username in form   | profile details of the user appears |
+|User chooses to search user-repos  | click view user repo button | Opens of repo page |
+|User writes username on the search | Inputs username in form  | Repo details appear on screen |
 ## Setup/Installation Requirements
 For Installation and setup requirements one could fork or clone the Github repository on my github profile
-* The live link is:https://wanguinjoka.github.io/github-search-angular-app
+* The live link on gh-pages is:https://wanguinjoka.github.io/github-search-angular-app
 ## Known Bugs
 There no Known Bugs
 ## Technologies used
@@ -27,5 +27,5 @@ For the user-interface and Business-logic:
 ## Support and contact details
 I encourage you to contact me for any queries through our github links above.
 ### License
-M
+MIT
 Copyright (c) {2018}
